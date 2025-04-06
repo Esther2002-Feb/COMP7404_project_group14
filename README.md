@@ -4,12 +4,14 @@ This is the final version of our original paper reproduction with the addition o
 We are acutely aware of the problems in our project. On the basis of the original paper, we decided to make some optimization of its method in order to obtain better results.
 ## The method we use
 ### The main methods used in this paper are K-means and SVM.
-The main code files involved are as follows:
+The code files are as follows:
+First version:
+- kmeans.py (L1-L61,L152-L267) from XIAYIFAN,(L62-L151) from DENGBOYUAN
+- projectSVM.py (L1-L155) from XIAYIFAN
+Second version:
 - main.py (L1-L169) from LIJIAHUI
 - onlySVM.py (L1-L78) from DENGBOYUAN
 - hyperparameter_optimization_SVM.py (L1-L87) from DENGBOYUAN
-- projectSVM.py (L1-L155) from XIAYIFAN
-- kmeans.py (L1-L61,L152-L267) from XIAYIFAN,(L62-L151) from DENGBOYUAN
 - model_evaluation (L1-L21) from LIJIAHUI
 - data_processing.py (L1-L87) from LIJIAHUI
 
