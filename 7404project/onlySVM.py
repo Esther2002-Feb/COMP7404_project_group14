@@ -8,39 +8,16 @@ from sklearn.metrics import accuracy_score, classification_report, confusion_mat
 
 class SVMClassifier:
     def __init__(self, kernel, C, gamma):
-        """
-        初始化支持向量机 (SVM) 模型
-
-        参数：
-        - kernel: SVM 的核函数类型（如 'linear', 'rbf', 'poly' 等）
-        - C: 正则化参数
-        - gamma: 核函数的系数
-        """
         self.kernel = kernel
         self.C = C
         self.gamma = gamma
         self.model = SVC(kernel=self.kernel, C=self.C, gamma=self.gamma)
 
     def train(self, train_features, train_labels):
-        """
-        训练 SVM 模型
-
-        参数：
-        - train_features: 训练特征
-        - train_labels: 训练标签
-        """
         print("开始训练 SVM 模型...")
         self.model.fit(train_features, train_labels)
 
     def evaluate(self, test_features, test_labels, result_path):
-        """
-        评估 SVM 模型性能
-
-        参数：
-        - test_features: 测试特征
-        - test_labels: 测试标签
-        - result_path: 模型预测结果保存路径
-        """
         print("开始测试 SVM 模型...")
         predicted_labels = self.model.predict(test_features)
 
