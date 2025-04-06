@@ -6,7 +6,7 @@ We are acutely aware of the problems in our project. On the basis of the origina
 ### The main methods used in this paper are K-means and SVM.
 The main code files involved are as follows:
 - main.py (L1-L169) from LIJIAHUI
-- onlySVM.py (L1-L97) from DENGBOYUAN
+- onlySVM.py (L1-L78) from DENGBOYUAN
 - hyperparameter_optimization_SVM.py (L1-L87) from DENGBOYUAN
 - projectSVM.py (L1-L155) from XIAYIFAN
 - kmeans.py (L1-L61,L152-L267) from XIAYIFAN,(L62-L151) from DENGBOYUAN
@@ -23,8 +23,8 @@ The main code files involved are as follows:
 - onlyMLP.py (L1-L77) from DENGBOYUAN, (L78-L127) from LIJIAHUI
 - hyperparameter_optimization_MLP.py (L1-L33) from LIJIAHUI
 
-### Lines of code per person
-XIAYIFAN:331
-DENGBOYUAN:350
-HUANGANQI:321
-LIJIAHUI:359
+Lines of code per person:
+- XIAYIFAN:331
+- DENGBOYUAN:331
+- HUANGANQI:321
+- LIJIAHUI:359
