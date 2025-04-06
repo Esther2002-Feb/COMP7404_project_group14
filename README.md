@@ -5,10 +5,14 @@ We are acutely aware of the problems in our project. On the basis of the origina
 ## The method we use
 ### The main methods used in this paper are K-means and SVM.
 The code files are as follows:
+
 First version:
+
 - kmeans.py (L1-L61,L152-L267) from XIAYIFAN,(L62-L151) from DENGBOYUAN
 - projectSVM.py (L1-L155) from XIAYIFAN
+
 Second version:
+
 - main.py (L1-L169) from LIJIAHUI
 - onlySVM.py (L1-L78) from DENGBOYUAN
 - hyperparameter_optimization_SVM.py (L1-L87) from DENGBOYUAN
