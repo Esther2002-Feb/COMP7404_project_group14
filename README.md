@@ -15,7 +15,7 @@ Second version:
 
 - main.py (L1-L169) from LIJIAHUI
 - onlySVM.py (L1-L78) from DENGBOYUAN
-- hyperparameter_optimization_SVM.py (L1-L87) from LIJIAHUI
+- optimization_methods.py (L1-L32) from LIJIAHUI, (L33-L92) from DENGBOYUAN
 - model_evaluation (L1-L21) from DENGBOYUAN
 - data_processing.py (L1-L87) from LIJIAHUI
 
@@ -31,6 +31,6 @@ Second version:
 
 Lines of code per member:
 - XIAYIFAN:331
-- DENGBOYUAN:315
+- DENGBOYUAN:374
 - HUANGANQI:321
-- LIJIAHUI:376
+- LIJIAHUI:321
