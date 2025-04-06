@@ -23,7 +23,7 @@ The main code files involved are as follows:
 - onlyMLP.py (L1-L77) from DENGBOYUAN, (L78-L127) from LIJIAHUI
 - hyperparameter_optimization_MLP.py (L1-L33) from LIJIAHUI
 
-Lines of code per person:
+Lines of code per member:
 - XIAYIFAN:331
 - DENGBOYUAN:331
 - HUANGANQI:321
