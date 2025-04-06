@@ -59,9 +59,95 @@ def find_best_k(data, max_k=30):
     best_k = K_values[np.argmin(ratios)]
     return best_k
 
+'''
+def calculate_davg(X, labels, centers):
+    K = centers.shape[0]  # 聚类的数量
+    N = X.shape[0]  # 数据点的数量
+    davg = 0.0
+
+    for k in range(K):
+        # 取出属于第 k 个聚类的数据点
+        cluster_points = X[labels == k]
+        # 计算到聚类中心的距离
+        distances = np.linalg.norm(cluster_points - centers[k], axis=1)
+        # 计算该聚类的平均距离
+        if len(cluster_points) > 0:  # 避免空聚类
+            davg += np.sum(distances) / len(cluster_points)
+
+    return davg / K  # 返回所有聚类的平均距离
+
+'''
+'''
+def calculate_dmin(centers):
+    K = centers.shape[0]
+    dmin = np.inf  # 初始化为无穷大
+
+    for k1 in range(K):
+        for k2 in range(k1 + 1, K):
+            # 计算两个聚类中心之间的距离
+            distance = np.linalg.norm(centers[k1] - centers[k2])
+            dmin = min(dmin, distance)  # 更新最小距离
+
+    return dmin
+'''
+
 breast_cancer_wisconsin_diagnostic = fetch_ucirepo(id=17)
 X = breast_cancer_wisconsin_diagnostic.data.features 
 y = breast_cancer_wisconsin_diagnostic.data.targets  
+
+'''
+X = breast_cancer_wisconsin_diagnostic.data.features 
+y = breast_cancer_wisconsin_diagnostic.data.targets 
+X.describe()
+min_max_values = {}
+prefixes = ['radius', 'texture', 'perimeter', 'area', 
+            'smoothness', 'compactness', 'concavity', 
+            'concave_points', 'symmetry', 'fractal_dimension']
+for prefix in prefixes:
+    min_max_values[prefix] = {
+        'min': min(X.filter(like=prefix).min()),
+        'max': max(X.filter(like=prefix).max())
+    }
+    
+min_max_df = pd.DataFrame({
+    'Attribute': [f"{prefix} (min)" for prefix in prefixes] + [f"{prefix} (max)" for prefix in prefixes],
+    'Value': [min_max_values[prefix]['min'] for prefix in prefixes] + [min_max_values[prefix]['max'] for prefix in prefixes]
+})
+X.describe().filter(like='texture')
+X.filter(like='radius').mean()
+
+print(min_max_df)
+'''
+'''
+validity_ratios = []
+K_range = range(2, 31)
+X_scaled = X_minmax
+for K in K_range:
+    kmeans = KMeans(n_clusters=K)
+    kmeans.fit(X_scaled)
+    labels = kmeans.labels_
+    centers = kmeans.cluster_centers_
+    # 计算有效性比率
+    davg = calculate_davg(X_scaled, labels, centers)    
+    # 计算聚类内距离
+    dmin = calculate_dmin(centers)
+    
+    validity_ratio = dmin / davg
+    validity_ratios.append(validity_ratio)
+
+plt.figure(figsize=(10, 6))
+plt.plot(K_range, validity_ratios, marker='o', linestyle='-', color='b')
+plt.title('Validity Ratio vs. Number of Clusters')
+plt.xlabel('Number of Clusters (K)')
+plt.ylabel('Validity Ratio')
+plt.xticks(K_range)
+#plt.ylim(0.7, 1.5)
+plt.grid(False) 
+plt.axvline(x=3, color='r', linestyle='--')  # 绘制 K=3 的垂直线
+plt.annotate('Local Minimum', xy=(3, validity_ratios[1]), xytext=(4, validity_ratios[1] + 0.1),
+             arrowprops=dict(facecolor='black', arrowstyle='->'))
+plt.show()
+'''
 
 y = y.squeeze()
 
