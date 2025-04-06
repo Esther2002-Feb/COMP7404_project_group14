@@ -7,16 +7,6 @@ from sklearn.metrics import accuracy_score, classification_report, confusion_mat
 
 class MLP:  
     def __init__(self, alpha, batch_size, node_size, num_classes, num_features):  
-        """  
-        初始化多层感知机 (MLP) 模型  
-
-        参数：  
-        - alpha: 学习率  
-        - batch_size: 批量大小  
-        - node_size: 隐藏层的神经元个数（列表）  
-        - num_classes: 输出类别数  
-        - num_features: 输入特征数  
-        """  
         self.alpha = alpha  
         self.batch_size = batch_size  
         self.node_size = node_size  
@@ -25,9 +15,7 @@ class MLP:
         self._build_model()  
 
     def _build_model(self):  
-        """  
-        构建 MLP 模型  
-        """  
+
         # 使用 Keras Sequential API 构建模型  
         self.model = tf.keras.Sequential()  
         self.model.add(tf.keras.layers.InputLayer(input_shape=(self.num_features,)))  
@@ -47,18 +35,6 @@ class MLP:
         )  
 
     def train(self, num_epochs, log_path, train_data, train_size, test_data, test_size, result_path):  
-        """  
-        训练模型  
-
-        参数：  
-        - num_epochs: 训练轮数  
-        - log_path: TensorBoard 日志保存路径  
-        - train_data: 训练数据（[train_features, train_labels]）  
-        - train_size: 训练数据大小  
-        - test_data: 测试数据（[test_features, test_labels]）  
-        - test_size: 测试数据大小  
-        - result_path: 模型预测结果保存路径  
-        """  
         train_features, train_labels = train_data  
         test_features, test_labels = test_data  
 
