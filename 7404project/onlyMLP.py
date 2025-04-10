@@ -7,6 +7,7 @@ from sklearn.metrics import accuracy_score, classification_report, confusion_mat
 
 class MLP:  
     def __init__(self, alpha, batch_size, node_size, num_classes, num_features):  
+
         self.alpha = alpha  
         self.batch_size = batch_size  
         self.node_size = node_size  
@@ -35,6 +36,7 @@ class MLP:
         )  
 
     def train(self, num_epochs, log_path, train_data, train_size, test_data, test_size, result_path):  
+
         train_features, train_labels = train_data  
         test_features, test_labels = test_data  
 

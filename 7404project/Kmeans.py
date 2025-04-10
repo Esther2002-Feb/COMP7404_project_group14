@@ -1,6 +1,14 @@
 #!/usr/bin/env python
 # coding: utf-8
 
+# In[1]:
+
+
+#!pip install ucimlrepo
+
+
+# In[1]:
+
 
 from ucimlrepo import fetch_ucirepo
 import numpy as np
@@ -258,6 +266,20 @@ ax2.legend()
 
 plt.show()
 
+
+# In[ ]:
+
+
+
+
+
+# In[ ]:
+
+
+
+
+
+# In[ ]:
 
 
 

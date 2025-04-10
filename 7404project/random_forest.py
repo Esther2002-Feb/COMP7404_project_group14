@@ -16,8 +16,8 @@ def load_and_preprocess():
     feature_names = data.feature_names
     
     # 数据归一化
-    scaler = MinMaxScaler()
-    features = scaler.fit_transform(features)
+    #scaler = MinMaxScaler()
+    #features = scaler.fit_transform(features)
     
     # 特征选择
     features, selected_indices = feature_selection(features, labels, num_features_to_select=15)

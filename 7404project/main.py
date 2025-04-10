@@ -5,7 +5,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import MinMaxScaler
 from data_processing import data_exploration, feature_selection
 from hyperparameter_optimization_MLP import optimize_mlp
-from hyperparameter_optimization_SVM import optimize_svm
+from optimization_methods import optimize_svm,optimize_naive_bayes,optimize_knn,optimize_logistic_regression,optimize_random_forest
 from model_evaluation import build_and_evaluate_model
 
 # 新增算法调用
@@ -134,15 +134,17 @@ def main():
     )
 
     # ===== 原有算法调用 =====
+    '''
     print("\n" + "="*50)
     print("=== 开始优化和评估 MLP 模型 ===")
     best_model_mlp = optimize_mlp(train_features, train_labels)
     build_and_evaluate_model(best_model_mlp, test_features, test_labels)
-
+   '''
     print("\n" + "="*50)
     print("=== 开始优化和评估 SVM 模型 ===")
     best_model_svm = optimize_svm(train_features, train_labels)
     build_and_evaluate_model(best_model_svm, test_features, test_labels)
+
 
     # ===== 新增算法调用 =====
     print("\n" + "="*50)
